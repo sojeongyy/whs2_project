@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 5%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            background-color: #555;
+            color: white;
+            border-radius: 3px;
+        }
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="container">
+            <h2>Welcome to
+                <br> Admin Login Page! </br>
+            </h2>
+            <form method="post" action="./login_check.php">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="userpw" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

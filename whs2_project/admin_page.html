@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Homepage</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column; /* Add this line */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 10px; /* Add this line */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white; text-align: center;">Welcome to the Admin Homepage!</h1>
+    <br><br>
+
+    <div style="display: flex; flex-direction: column; align-items: center;"></div>
+        <button id="postManagementBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">게시물 관리</button>
+        <button id="userListBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">회원 목록</button>
+        <button id="fileUploadBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">파일 업로드</button>
+    </div>
+        <script>
+        // Add event listeners to the buttons
+        document.getElementById("postManagementBtn").addEventListener("click", function() {
+            // Handle 게시물 관리 button click event
+        });
+        
+        document.getElementById("userListBtn").addEventListener("click", function() {
+            // Handle 회원 목록 button click event
+            window.location.href = "check_members.php";
+        });
+        
+        document.getElementById("fileUploadBtn").addEventListener("click", function() {
+            // Handle 파일 업로드 button click event
+            window.location.href = "bruteForce.html";
+        });
+    </script>
+</div>
+</body>
+</html>
