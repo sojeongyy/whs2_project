@@ -28,6 +28,7 @@ if ($stmt = mysqli_prepare($conn, $q)) {
 
     if($row != null) { 
         $_SESSION['admin'] = $username;
+        $_SESSION['loggedin'] = true;
         echo "<script>alert('Login successful!');location.replace('admin_page.html');</script>";
         exit(); 
     } else {

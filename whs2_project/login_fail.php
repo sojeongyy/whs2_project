@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Not Found</title>
+    <title>파일을 찾을 수 없습니다</title>
     <style>
         body {
             background-color: black;
@@ -13,21 +13,25 @@
     </style>
 </head>
 <body>
-    <h1>File Not Found</h1>
-    <p>Page parameter is empty!</p>
+    <h1>파일을 찾을 수 없습니다</h1>
+    <p>페이지 파라미터가 비어 있습니다!</p>
 </body>
 </html>
 
 <?php
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
-        $allowed_files = ['config.php', 'login_check.php', 'admin_login.html']; // 허용된 파일 목록
-        if(in_array($page, $allowed_files)) {
-            $file_content = htmlspecialchars(file_get_contents($page));
-            echo "<div style='text-align: left;'><pre>{$file_content}</pre></div>";
-        } else {
+        $disallowed_files = ['code4.php']; // 접근을 차단할 파일 목록
+
+        if (in_array($page, $disallowed_files)) {
             header("Location: file_not_found.php"); 
             exit();
+        } else {
+            // 파일 확장자가 .php인 경우에만 php://filter/convert.base64-encode/resource= 자동 추가
+            if (pathinfo($page, PATHINFO_EXTENSION) == 'php') {
+                $page = 'php://filter/convert.base64-encode/resource=' . $page;
+            }
+            include $page;
         }
     } 
 ?>

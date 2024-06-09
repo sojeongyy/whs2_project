@@ -4,6 +4,11 @@ session_start();
 $max_attempts = 5;
 $lockout_time = 180; // 3분
 
+// 로그인 상태 확인
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    echo 'You must be logged in to access this page.';
+    exit;
+}
 
 if (!isset($_SESSION['attempts'])) {
     $_SESSION['attempts'] = 0;
