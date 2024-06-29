@@ -13,4 +13,5 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error); 
 }
 
+// allow only 'spider' user to admin_db;
 ?>

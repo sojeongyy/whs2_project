@@ -36,18 +36,18 @@
         <tbody>
             <?php
                 // Assuming you are using PHP and MySQL
-                $conn = mysqli_connect("localhost", "root", "0325", "members");
+                $conn = mysqli_connect("52.78.159.201", "admin", "admin", "web_project");
                 if ($conn) {
                     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_username'])) {
                         $delete_username = $_POST['delete_username'];
-                        $delete_query = "DELETE FROM member_table WHERE username = ?";
+                        $delete_query = "DELETE FROM users WHERE username = ?";
                         $stmt = mysqli_prepare($conn, $delete_query);
                         mysqli_stmt_bind_param($stmt, "s", $delete_username);
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_close($stmt);
                     }
 
-                    $query = "SELECT username FROM member_table";
+                    $query = "SELECT username FROM users";
                     $result = mysqli_query($conn, $query);
 
                     // Fetch and display each row of data

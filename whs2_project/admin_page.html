@@ -26,14 +26,15 @@
     <br><br>
 
     <div style="display: flex; flex-direction: column; align-items: center;"></div>
-        <button id="postManagementBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">게시물 관리</button>
-        <button id="userListBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">회원 목록</button>
-        <button id="fileUploadBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">파일 업로드</button>
+        <button id="postManagementBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">Post Management</button>
+        <button id="userListBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">User List</button>
+        <button id="fileUploadBtn" style="width: 40%; padding: 10px; border: none; background-color: #007bff; color: white; border-radius: 3px; cursor: pointer;">HFS Server</button>
     </div>
         <script>
         // Add event listeners to the buttons
         document.getElementById("postManagementBtn").addEventListener("click", function() {
             // Handle 게시물 관리 button click event
+	    window.location.href = "post_management.php";
         });
         
         document.getElementById("userListBtn").addEventListener("click", function() {
